@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 18px;
+  }
+
+  body {
+    @apply bg-slate-900 text-cream;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-amber;
+  }
+
+  /* Light mode */
+  .light body {
+    @apply bg-ink-50 text-slate-900;
+  }
+}
+
+@layer components {
+  /* TipTap / ProseMirror editor styles */
+  .tiptap-editor .ProseMirror {
+    @apply outline-none min-h-[400px] font-body text-cream leading-relaxed;
+    font-size: 1.1rem;
+  }
+
+  .tiptap-editor .ProseMirror p {
+    @apply mb-4;
+  }
+
+  .tiptap-editor .ProseMirror h1 {
+    @apply font-display text-3xl text-amber mb-4 mt-8;
+  }
+
+  .tiptap-editor .ProseMirror h2 {
+    @apply font-display text-2xl text-amber-light mb-3 mt-6;
+  }
+
+  .tiptap-editor .ProseMirror h3 {
+    @apply font-display text-xl text-parchment mb-3 mt-5;
+  }
+
+  .tiptap-editor .ProseMirror ul {
+    @apply list-disc list-inside mb-4 space-y-1;
+  }
+
+  .tiptap-editor .ProseMirror ol {
+    @apply list-decimal list-inside mb-4 space-y-1;
+  }
+
+  .tiptap-editor .ProseMirror blockquote {
+    @apply border-l-4 border-amber pl-4 italic text-parchment opacity-80 my-4;
+  }
+
+  .tiptap-editor .ProseMirror strong {
+    @apply font-semibold text-amber-light;
+  }
+
+  .tiptap-editor .ProseMirror em {
+    @apply italic text-parchment;
+  }
+
+  .tiptap-editor .ProseMirror code {
+    @apply font-mono bg-slate-800 px-1 rounded text-sm;
+  }
+
+  .tiptap-editor .ProseMirror hr {
+    @apply border-slate-600 my-8;
+  }
+
+  .tiptap-editor .ProseMirror .is-editor-empty::before {
+    @apply text-slate-500 pointer-events-none float-left h-0;
+    content: attr(data-placeholder);
+  }
+
+  /* Notes editor (lighter variant) */
+  .tiptap-notes .ProseMirror {
+    @apply outline-none min-h-[200px] font-body text-parchment leading-relaxed;
+    font-size: 1rem;
+  }
+
+  .tiptap-notes .ProseMirror p {
+    @apply mb-3;
+  }
+
+  .tiptap-notes .ProseMirror .is-editor-empty::before {
+    @apply text-slate-500 pointer-events-none float-left h-0;
+    content: attr(data-placeholder);
+  }
+
+  /* Drag handle */
+  .drag-handle {
+    @apply cursor-grab active:cursor-grabbing;
+  }
+
+  /* Scene card */
+  .scene-card {
+    @apply bg-slate-700 border border-slate-500 rounded p-3 text-sm cursor-pointer
+           hover:border-amber transition-all duration-200;
+  }
+
+  /* Status badges */
+  .badge-draft {
+    @apply bg-slate-600 text-slate-200;
+  }
+
+  .badge-complete {
+    @apply bg-emerald-800 text-emerald-200;
+  }
+
+  .badge-needs-editing {
+    @apply bg-amber-800 text-amber-200;
+  }
+
+  .badge-in-progress {
+    @apply bg-blue-800 text-blue-200;
+  }
+}
