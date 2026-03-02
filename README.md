@@ -1,6 +1,7 @@
 # 📖 ChapterFlow — Novel Writing Web App
 
 A polished, production-grade novel writing application built with React. Manage multiple novel projects, write with a rich text editor, plan scenes on a corkboard, and export your manuscript.
+View it in action here: https://chapterflow-liard.vercel.app/
 
 ## ✨ Features
 
