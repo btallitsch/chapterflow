@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Theme variables ─────────────────────────────────────────────────────────
+   Colors are defined as raw RGB channels (no rgb() wrapper) so that Tailwind's
+   opacity modifier syntax works: e.g. bg-slate-900/80
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Light mode (default) — warm parchment / ink aesthetic */
+:root {
+  --slate-950:  255 254 249;   /* near-white warm */
+  --slate-900:  250 247 240;   /* warm paper */
+  --slate-800:  240 235 225;   /* parchment */
+  --slate-700:  229 221 209;   /* light warm grey */
+  --slate-600:  200 191 175;   /* mid warm grey */
+  --slate-500:  158 146 132;   /* muted text */
+  --slate-400:  122 110 98;    /* subtle text */
+  --cream:       26  18   9;   /* dark ink — main text */
+  --parchment:   74  63  46;   /* medium ink — secondary text */
+}
+
+/* Dark mode — deep slate / noir aesthetic */
+.dark {
+  --slate-950:  10  13  20;
+  --slate-900:  15  17  23;
+  --slate-800:  22  25  35;
+  --slate-700:  30  35  48;
+  --slate-600:  37  45  61;
+  --slate-500:  46  56  77;
+  --slate-400:  61  77 106;
+  --cream:      245 240 232;
+  --parchment:  237 228 208;
+}
+
 @layer base {
   * {
     box-sizing: border-box;
@@ -33,11 +64,6 @@
 
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-amber;
-  }
-
-  /* Light mode */
-  .light body {
-    @apply bg-ink-50 text-slate-900;
   }
 }
 
@@ -125,7 +151,7 @@
 
   /* Status badges */
   .badge-draft {
-    @apply bg-slate-600 text-slate-200;
+    @apply bg-slate-600 text-cream;
   }
 
   .badge-complete {
