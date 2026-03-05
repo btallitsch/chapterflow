@@ -11,13 +11,15 @@ const initialState = {
   projects: [],
   activeProjectId: null,
   activeChapterId: null,
-  activeView: 'dashboard', // dashboard | project | editor | scenes
+  activeView: 'dashboard',
   searchQuery: '',
   statusFilter: 'all',
   isDarkMode: true,
   isSidebarOpen: true,
-  autosaveStatus: 'idle', // idle | saving | saved
+  autosaveStatus: 'idle',
   notifications: [],
+  user: null,           // ADD
+  isLoadingData: false, // ADD
 }
 
 // ─── Reducer ──────────────────────────────────────────────────────────────────
