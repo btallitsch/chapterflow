@@ -116,10 +116,16 @@ export default function Sidebar() {
       </nav>
 
       {/* Footer */}
-      <div className="px-4 py-3 border-t border-slate-700/60">
+      <div className="px-4 py-3 border-t border-slate-700/60 space-y-2">
         <p className="text-xs font-mono text-slate-600">
           {projects.length} project{projects.length !== 1 ? 's' : ''}
         </p>
+        <button
+          onClick={onSignOut}
+          className="text-xs text-slate-600 hover:text-red-400 transition-colors font-mono w-full text-left"
+        >
+          Sign out
+        </button>
       </div>
     </aside>
   )
