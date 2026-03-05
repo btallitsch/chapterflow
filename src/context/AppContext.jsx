@@ -222,6 +222,12 @@ function appReducer(state, action) {
       }
     }
 
+    case 'SET_USER':
+      return { ...state, user: action.payload }
+    
+    case 'SET_LOADING':
+      return { ...state, isLoadingData: action.payload }
+
     // Navigation
     case 'SET_ACTIVE_PROJECT':
       return { ...state, activeProjectId: action.payload, activeView: 'project', activeChapterId: null }
