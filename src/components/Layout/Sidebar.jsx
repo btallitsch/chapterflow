@@ -2,7 +2,7 @@ import React from 'react'
 import { BookOpen, LayoutDashboard, ChevronRight, Plus, Feather } from 'lucide-react'
 import { useApp } from '../../context/AppContext'
 
-export default function Sidebar() {
+export default function Sidebar({ onSignOut }) {
   const { state, dispatch } = useApp()
   const { projects, activeProjectId, activeView, isSidebarOpen } = state
 
@@ -120,12 +120,14 @@ export default function Sidebar() {
         <p className="text-xs font-mono text-slate-600">
           {projects.length} project{projects.length !== 1 ? 's' : ''}
         </p>
-        <button
-          onClick={onSignOut}
-          className="text-xs text-slate-600 hover:text-red-400 transition-colors font-mono w-full text-left"
-        >
-          Sign out
-        </button>
+        {onSignOut && (
+          <button
+            onClick={onSignOut}
+            className="text-xs text-slate-600 hover:text-red-400 transition-colors font-mono w-full text-left"
+          >
+            Sign out
+          </button>
+        )}
       </div>
     </aside>
   )
